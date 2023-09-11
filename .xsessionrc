@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# wallpaper
+~/.fehbg &
+#nitrogen --restore &
+
+# panel
+xmobar & 
+
+# compositor
+picom -b &
+
+# notification
+#dunst &
+/usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd &
+
+# redshift (change the lati:longi with your number of location)
+redshift -l lati:longi -t 4500:3500 -g 0.8 -m vidmode -v &
+
+# brightness
+brightnessctl set 40% &
+
+# volume
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 15% &
+
+# auto sleep
+#xautolock -time 15 -locker "systemctl suspend" &
