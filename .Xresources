@@ -36,6 +36,9 @@ XTerm.vt100.foreground: #1b1b1b
 !XTerm.vt100.background: #1b1b1b
 !XTerm.vt100.foreground: #f9f9f9
 
+!Background fo roses and beauty
+!XTerm.vt100.background: #282828
+
 !Normal colors
 !	XTerm.vt100.color0: #282828
 !	XTerm.vt100.color1: #cc241d
@@ -62,7 +65,7 @@ XTerm.vt100.faceSize: 9
 XTerm.vt100.saveLines: 20000
 
 XTerm.vt100.cursorBlink: true
-XTerm.vt100.cursorColor: #f9f9f9
+!XTerm.vt100.cursorColor: #f9f9f9
 
 XTerm.vt100.selectToClipboard: true 
 XTerm.vt100.translations: #override \n\
