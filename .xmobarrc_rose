@@ -1,0 +1,77 @@
+Config { 
+font = "Terminus (TTF) 9" 
+, additionalFonts = ["FontAwesome 8"]
+, alpha = 229
+, borderColor = "#282828"
+, border = NoBorder
+, bgColor = "#282828"
+, fgColor = "#f9f9f9"
+, position = Static {xpos = 176 , ypos = 14 , width = 1012 , height = 22}
+, textOffset = -1
+, iconOffset = -1
+, lowerOnStart = True
+, pickBroadest = False
+, persistent = True 
+, hideOnStart = False
+, iconRoot = "."
+, allDesktops = True
+, overrideRedirect = True
+, textOutputFormat = Ansi
+, commands = 
+	[
+	Run DynNetwork	 [ "--template" , "   <tx>kB/s|<rx>kB/s"
+			 , "--Low"      , "1000"       -- units: B/s
+			 , "--High"     , "5000"       -- units: B/s
+			 , "--low"      , "#98971a"
+			 , "--normal"   , "#d79921"
+			 , "--high"     , "#fb4934"
+			 ] 10
+
+	, Run CoreTemp   [ "--template" , "<core0>°C <core1>°C"
+			 , "--Low"      , "70"        -- units: °C
+			 , "--High"     , "80"        -- units: °C
+			 , "--low"      , "#1b1b1b,#f9f9f9"
+			 , "--normal"   , "#d79921,#f9f9f9"
+			 , "--high"     , "#fb4934,#f9f9f9"
+			 ] 50
+
+	, Run Battery    [ "--template" , "<acstatus>"
+			 , "--Low"      , "20"        -- units: %
+			 , "--High"     , "80"        -- units: %
+			 , "--low"      , "#fb4934,#f9f9f9"
+			 , "--normal"   , "#1b1b1b,#f9f9f9"
+			 , "--high"     , "#1b1b1b,#f9f9f9"
+
+			 , "--" -- battery specific options
+			  	-- discharging status
+				, "-o"	, " <left>% "
+			   	-- AC "on" status
+			   	, "-O"	, " <fc=#1b1b1b,#f9f9f9><left>%</fc> "
+			   	-- charged status
+			   	, "-i"	, " <fc=#1b1b1b,#f9f9f9><left>%</fc> "
+	    		 ] 50
+
+	, Run Cpu 	 ["--template", "<total>%"
+			 , "-L","3","-H","50"
+                         , "--normal","#d79921,#f9f9f9"
+			 , "--high","#fb4934,#f9f9f9"] 10
+
+	, Run Memory ["-t","<usedratio>%"] 10
+	, Run Swap [] 10
+
+	, Run Com "uname" ["-s","-r"] "" 36000
+	
+	, Run Com "volume_noicon.sh" [] "vol" 10
+
+	, Run Com "brightness_noicon.sh" [] "bright" 10
+
+	, Run Com "mpd.sh" [] "mpd" 10
+
+	, Run Date "%a %b %d %R" "date" 10
+        ]
+
+, sepChar = "%"
+, alignSep = "}{"
+, template = " <fc=#1b1b1b,#b16286>  </fc><fc=#1b1b1b,#f9f9f9> diws </fc> <fc=#1b1b1b,#fb4934>  </fc><fc=#1b1b1b,#f9f9f9> %memory% </fc> <fc=#1b1b1b,#fabd2f>  </fc><fc=#1b1b1b,#f9f9f9> %cpu% </fc> <fc=#98971a> %dynnetwork%  %mpd%</fc> }\
+	     \{ <fc=#1b1b1b,#83a598>  </fc><fc=#1b1b1b,#f9f9f9> %bright% </fc> <fc=#1b1b1b,#d3869b>  </fc><fc=#1b1b1b,#f9f9f9> %vol% </fc> <fc=#1b1b1b,#98971a>  </fc><fc=#1b1b1b,#f9f9f9> %coretemp% </fc> <fc=#1b1b1b,#458588>   </fc>%battery% <fc=#1b1b1b,#8ec87c>  </fc><fc=#1b1b1b,#f9f9f9> %date% </fc> "
+}
