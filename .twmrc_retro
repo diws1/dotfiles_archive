@@ -3,7 +3,7 @@
 #   / /_ _    _  __  __   ____  ____  __  __  ____ (_)____   ____ (_)_   ____
 #  / ,__/ \/\/ //  \/  / / ___// _  //  \/  // __// // _  / / __// // /_/ -__/
 # /____/\__'__//__/'/_/ /____//____//__/'__// __//_/(___ / / __//_//___/____/
-#                                 by diws  /_/      /___/ /_/            +++
+#                                 by diws  /_/      /___/ /_/           retro
 
 
 ### GENERAL SETTINGS ###
@@ -168,8 +168,7 @@ menu "main" {
 
 Button3         =       : root          : f.menu "apps"
 Button3		=	: title		: f.menu "window title"
-Button4		=	: root		: f.exec "scrollup.sh"
-Button5		=	: root		: f.exec "scrolldown.sh"
+
 
 
 ### MENU (Right Click) ###
@@ -273,6 +272,13 @@ menu "apps" {
 				"Yes"                                   f.exec "systemctl poweroff"
 				"No"                                    f.restart
 		}
+
+
+
+### BUTTON4&5 (Mouse/Touchpad scrolling) FUNCTION ###
+
+Button4		=	: root		: f.exec "scrollup.sh"
+Button5		=	: root		: f.exec "scrolldown.sh"
 
 
 
