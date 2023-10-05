@@ -1,0 +1,48 @@
+window:
+  title: terminal
+  dimensions:
+    columns: 78
+    lines: 24
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.86
+
+cursor:
+  style:
+    shape: Block  #Block, Underline, Beam
+    blinking: Off
+    blink_interval: 300
+    blink_timeout: 0
+
+scrolling:
+  history: 20000
+  multiplier: 3
+
+font:
+  size: 8
+#  size: 8.4
+  normal:
+    family: Envy Code R
+#    family: Terminus
+    style: Regular
+  bold:
+    family: Envy Code R
+#    family: Terminus
+    style: Bold
+  italic:
+    family: Envy Code R
+#    family: Terminus
+    style: Italic
+  bold_italic:
+    family: Envy Code R
+#    family: Terminus
+    style: Bold Italic
+
+draw_bold_text_with_bright_colors: true
+
+import:
+  - ~/.config/alacritty/smoke.yml
+
+key_bindings:
+  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
