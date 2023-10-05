@@ -42,7 +42,7 @@ font:
 draw_bold_text_with_bright_colors: true
 
 import:
-  - ~/.config/alacritty/smoke.yml
+  - ~/.config/alacritty/gruvbox-dark.yml
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
