@@ -1,24 +1,21 @@
-# My desktop configuration
+# My desktop configuration preview
 
-TWM Preview
-
-Roses
+<b>TWM Preview</b> \
+<b>Roses</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/twm%20rose.png)
-
-Beauty
+<b>Beauty</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/twm%20beauty.png)
-
-Retro
+<b>Retro</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/twm%20retro.png)
 
-BSPWM Preview
+<b>BSPWM Preview</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/bspwm%20preview1.png)
 ![My Image](https://github.com/diws1/dotfiles/blob/main/bspwm%20preview2.png)
 
-Xfce Preview
-Aestethic
+<b>Xfce Preview</b> \
+<b>Aestethic</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/xfce%20aestethic%20preview.png)
-Light
+<b>Light</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/xfce%20light%20preview.png)
-Dark
+<b>Dark</b>
 ![My Image](https://github.com/diws1/dotfiles/blob/main/xfce%20dark%20preview.png)
