@@ -1,1 +1,189 @@
+# Directory
+ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.ncmpcpp/lyrics
+
+# Connection
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 5
+mpd_music_dir = ~/Music
+mpd_crossfade_time = 5
+
+# Visualizer
+audio_output {
+        type            "fifo"
+        name            "Visualizer feed"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"
+}
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = Visualizer feed
+#If you set format to 44100:16:2, make it 'yes'
+visualizer_in_stereo = yes
+#visualizer_sync_interval = 0
+#spectrum, wave, wave_filled, ellipse
+visualizer_type = ellipse
+visualizer_fps = 60
+visualizer_autoscale = no
+visualizer_look = ●▮
+#DARK
+#visualizer_color = 247, 246, 245, 244, 243, 242, 241, 240, 239, 238, 237, 236, 235, 234, 233
+#BLUE WHITE
+#visualizer_color = 242, 243, 244, 245, 246, 247, 248, 249, 250, 40, 39, 38
+#PURPLE WHITE
+visualizer_color = 242, 243, 244, 245, 246, 247, 248, 249, 250, 142, 141, 140
+visualizer_spectrum_smooth_look = yes
+#A value between 1 and 5 inclusive
+visualizer_spectrum_dft_size = 2
+visualizer_spectrum_gain = 10
+visualizer_spectrum_hz_min = 20
+visualizer_spectrum_hz_max = 20000
+
+# System encoding
+system_encoding = ""
+
+# Delays
+playlist_disable_highlight_delay = 5
+message_delay_time = 5
+
+# Song format
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$3%l$9}
+song_status_format = {%a - }{%t}{%f}
+song_library_format = {%n - }{%t}|{%f}
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+current_item_prefix = $(yellow)$r
+current_item_suffix = $/r$(end)
+current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_suffix = $/r$(end)
+now_playing_prefix = $b
+now_playing_suffix = $/b
+browser_playlist_prefix = "$2playlist$9 "
+selected_item_prefix = $6
+selected_item_suffix = $9
+modified_item_prefix = $3> $9
+
+# Window title
+song_window_title_format = {%a - }{%t}|{%f}
+
+# Sorting songs 
+#browser_sort_mode are "type", "name", "mtime", "format" and "none"
+browser_sort_mode = type
+browser_sort_format = {%a - }{%t}|{%f} {%l}
+
+# Columns
+#DARK
+song_columns_list_format = (49)[142]{ar} (51)[256]{t|f:Title}
+#BLUE
+#song_columns_list_format = (49)[232]{ar} (51)[39]{t|f:Title}
+
+# More settings
+#playlist_show_mpd_host = no
+#playlist_show_remaining_time = no
+#playlist_shorten_total_times = no
+#playlist_separate_albums = no
+
+playlist_display_mode = columns
+browser_display_mode = classic
+search_engine_display_mode = classic
+playlist_editor_display_mode = classic
+discard_colors_if_item_is_selected = yes
+show_duplicate_tags = yes
+incremental_seeking = yes
+seek_time = 1
+volume_change_step = 2
+autocenter_mode = no
+centered_cursor = no
+
+progressbar_look = ──
+
+#Available values: database, playlis
+#default_place_to_search_in = database
+
+#Available values: classic, alternative
+#user_interface = classic
+#data_fetching_delay = yes
+
+#Available values: artist, album_artist, date, genre, composer, performer
+media_library_primary_tag = artist
+media_library_albums_split_by_date = yes
+media_library_hide_album_dates = no
+
+#Available values: wrapped, normal
+default_find_mode = wrapped
+default_tag_editor_pattern = %n - %t
+header_visibility = no
+statusbar_visibility = no
+
+connected_message_on_startup = yes
+titles_visibility = no
+header_text_scrolling = yes
+cyclic_scrolling = no
+lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+follow_now_playing_lyrics = no
+fetch_lyrics_for_current_song_in_background = no
+store_lyrics_in_song_dir = no
+generate_win32_compatible_filenames = yes
+allow_for_physical_item_deletion = no
+
+lastfm_preferred_language = en
+space_add_mode = add_remove
+show_hidden_files_in_local_browser = no
+
+#Screens available for use: help, playlist, browser, search_engine, media_library, playlist_editor, tag_editor, outputs, visualizer, clock, lyrics, last_fm
+screen_switcher_mode = playlist, browser
+startup_screen = playlist
+startup_slave_screen = "visualizer"
+startup_slave_screen_focus = no
+
+locked_screen_width_part = 50
+ask_for_locked_screen_width_part = yes
+jump_to_now_playing_song_at_start = yes
+ask_before_clearing_playlists = yes
+clock_display_seconds = no
+display_volume_level = no
+display_bitrate = no
+display_remaining_time = no
+
+#Available values: none, basic, extended, perl
+regular_expressions = perl
+
+ignore_leading_the = no
+ignore_diacritics = no
+block_search_constraints_change_if_items_found = yes
+mouse_support = yes
+mouse_list_scroll_whole_page = no
+lines_scrolled = 5
+empty_tag_marker = <empty>
+tags_separator = " | "
+tag_editor_extended_numeration = no
+media_library_sort_by_mtime = no
+enable_window_title = yes
+
+#See original config file for details
+search_engine_default_search_mode = 1
+external_editor = nano
+use_console_editor = yes
+
+# Colors
+colors_enabled = yes
+empty_tag_color = 10
+header_window_color = default
+volume_color = default
+state_line_color = default
+state_flags_color = default:b
+main_window_color = white
+color1 = white
+color2 = green
+progressbar_color = black
+progressbar_elapsed_color = 250
+statusbar_color = default
+statusbar_time_color = default:b
+player_state_color = default:b
+alternative_ui_separator_color = black:b
+window_border_color = green
+active_window_border = red
+
+execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"
 
