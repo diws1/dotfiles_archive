@@ -1,0 +1,60 @@
+configuration {
+        modi: "drun,run,window";
+        display-drun: " ";
+        font: "Envy Code R 7.7";
+        show-icons: true;
+        icon-theme: "Faba";
+        sidebar-mode: false;
+        columns: 3;
+}
+
+* {
+        background: #282828;
+        alternate-normal-background: #282828;
+        border-color: #282828;
+        selected-normal-background: #f9f9f9;
+        selected-normal-foreground: #000000;
+        foreground: #f9f9f9;
+}
+
+window {
+        border: 1;
+        height: 50%;
+        width: 50%;     
+        padding: 29;
+}
+
+textbox-prompt-colon {
+        enabled: false;
+        str: ":";
+}
+
+entry {
+        placeholder: "Search...";
+}
+
+num-filtered-rows {
+        enabled: false;
+}
+
+textbox-num-sep {
+        enabled: false;
+        str: "/";
+}
+
+num-rows {
+        enabled: false;
+}
+
+listview {
+        columns: 2;
+        scrollbar: false;
+        spacing: 1px;
+}
+
+scrollbar {
+        border: 0;
+        handle-width: 0px;
+        handle-color: #1B1F26;
+        padding: 0;
+}
