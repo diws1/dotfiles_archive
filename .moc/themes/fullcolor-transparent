@@ -1,0 +1,41 @@
+# Theme: fullcolor-transparent
+# By diws
+#----------------------------------------------------#
+
+background              = black         default
+frame                   = white         default
+window_title            = white         default
+directory               = white         default bold
+selected_directory      = green         default bold
+playlist                = white         default
+selected_playlist       = green         default bold
+file                    = white         default
+selected_file           = green         default
+marked_file             = green         default bold
+marked_selected_file    = green         default bold
+info                    = white         default bold
+selected_info           = green         default bold
+marked_info             = green         default bold
+marked_selected_info    = green         default bold
+status                  = white         default
+title                   = white         default bold
+state                   = white         default bold
+current_time            = black         yellow
+time_left               = black         magenta
+total_time              = black         red
+time_total_frames       = black         red
+sound_parameters        = white         default bold
+legend                  = white         default
+disabled                = blue          default bold
+enabled                 = white         default bold
+empty_mixer_bar         = black         cyan
+filled_mixer_bar        = black         default
+empty_time_bar          = white         default
+filled_time_bar         = black         default
+entry                   = white         default
+entry_title             = black         default
+error                   = red           default bold
+message                 = blue          default bold
+plist_time              = black         cyan
+
+#----------------------------------------------------#

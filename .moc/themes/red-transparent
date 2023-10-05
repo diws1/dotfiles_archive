@@ -1,0 +1,41 @@
+# Theme: red-transparent
+# By diws
+#----------------------------------------------------#
+
+background              = black         default
+frame                   = black         default
+window_title            = black         white
+directory               = white         default bold
+selected_directory      = red           default bold
+playlist                = white         default
+selected_playlist       = red           default bold
+file                    = white         default
+selected_file           = red           default
+marked_file             = red           default bold
+marked_selected_file    = red           default bold
+info                    = white         default bold
+selected_info           = red           default bold
+marked_info             = red           default bold
+marked_selected_info    = red           default bold
+status                  = white         default
+title                   = white         default
+state                   = white         default bold
+current_time            = black         yellow
+time_left               = black         yellow
+total_time              = black         yellow
+time_total_frames       = black         yellow
+sound_parameters        = white         default bold
+legend                  = white         default
+disabled                = red           default bold
+enabled                 = white         default bold
+empty_mixer_bar         = black         white
+filled_mixer_bar        = black         default
+empty_time_bar          = white         default
+filled_time_bar         = black         default
+entry                   = white         default
+entry_title             = black         default
+error                   = red           default bold
+message                 = blue          default bold
+plist_time              = black         white
+
+#----------------------------------------------------#
