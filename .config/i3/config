@@ -1,0 +1,159 @@
+#### I3 WM CONFIG BY diws ####
+
+
+### ModKey
+set $mod Mod4
+
+### Restart
+bindsym $mod+Control+r restart
+
+### Exit
+bindsym $mod+Escape exit
+
+### Font
+font pango: Terminus (TTF) 9
+
+### System Tray GUI
+#exec --no-startup-id nm-applet
+
+### Audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+### Brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+### Panel/Bar
+bar {
+	status_command i3status -c ~/.config/i3/i3status.conf
+	#position top
+	#separator_symbol " "
+	height 16		
+
+	colors {
+		statusline	#000000
+		background	#282828
+		separator	#282828
+
+		#name              #border #bg     #text
+        	focused_workspace  #515151 #515151 #BBBBBB
+        	active_workspace   #0f1316 #0f1316 #BBBBBB
+	      	inactive_workspace #0f1316 #0f1316 #BBBBBB
+	}
+}
+
+### Titlebar
+#tiling_drag modifier titlebar
+
+### Border Pixel
+default_border pixel 2
+
+### Border Hide (when only 1 window)
+#hide_edge_borders smart
+
+### Border Color
+#name                   #top    #border #text
+client.focused          #4F4F4F #4F4F4F #1F1F1F #4F4F4F
+client.unfocused        #0F0F0F #0F0F0F #978965 #0F0F0F
+client.focused_inactive	#0F0F0F	#0F0F0F	#978965	#0F0F0F
+
+### Border Controler
+# none = no border, normal = default i3, 1pixel = 1pixel border
+bindsym $mod+Shift+x border none
+bindsym $mod+Shift+n border normal
+bindsym $mod+Shift+o border 1pixel
+
+### Gaps
+gaps inner 2 
+gaps outer 2 
+
+### Change Window Focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+	##### alternative ##### 
+	bindsym $mod+z focus left
+	bindsym $mod+x focus up
+
+### Move Focused Window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+### Move Focused Window (with Mouse)
+floating_modifier $mod
+
+### Change Window Split (hor/ver)
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+### Window Fullscreen
+bindsym $mod+f fullscreen
+
+### Window Layout (stacked, tabbed, toggle split)
+bindsym $mod+q layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+### Floating/Tiling Window
+bindsym $mod+Shift+space floating toggle
+
+### Window Resize
+bindsym $mod+r mode "resize" 
+mode "resize" {
+		bindsym $mod+r mode "default"
+	    	bindsym Left resize shrink width 10 px or 10 ppt
+       		bindsym Down resize grow height 10 px or 10 ppt
+       		bindsym Up resize shrink height 10 px or 10 ppt
+        	bindsym Right resize grow width 10 px or 10 ppt
+}
+
+### Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+### Switch Workspaces
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+
+### Move Window to Workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+
+### Applications Autostart ###
+exec_always xwallpaper --zoom ~/Wallpapers/monokai\ blue.png
+#exec xautolock -time 20 -locker "systemctl suspend"
+#exec_always redshift -l -2.990934:104.756554
+#exec_always --no-startup-id polybar -c ~/.config/i3/polybar.ini i3
+#exec . ~/.config/lemonbar/night_theme
+#exec xfce4-panel 
+exec killall xmobar
+
+### Applications Launch ###
+bindsym $mod+a exec alacritty 
+bindsym $mod+d exec thunar
+bindsym $mod+b exec brave
+bindsym $mod+s exec xfce4-screenshooter
+bindsym $mod+m exec alacritty -e mocp
+bindsym $mod+Shift+m exec alacritty -e cava
+bindsym $mod+space exec rofi -show drun
+#bindsym $mod+Shift+s exec "mkdir -p Pictures/Screenshots && scrot -q 100 Pictures/Screenshots/scrot.png"
+bindsym $mod+Shift+s exec "mkdir -p Pictures/Screenshots && scrot Pictures/Screenshots/scrot_%a-%d%b%y_%R.png"
+
+### Kill Applications ###
+bindsym $mod+Shift+c kill
+
+#
+#
+#
