@@ -134,7 +134,7 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 ### Applications Autostart ###
 exec_always xwallpaper --zoom ~/Wallpapers/monokai\ blue.png
 #exec xautolock -time 20 -locker "systemctl suspend"
-#exec_always redshift -l -2.990934:104.756554
+#exec_always redshift -l latit:longi
 #exec_always --no-startup-id polybar -c ~/.config/i3/polybar.ini i3
 #exec . ~/.config/lemonbar/night_theme
 #exec xfce4-panel 
