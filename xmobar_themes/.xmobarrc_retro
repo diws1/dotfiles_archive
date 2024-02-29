@@ -1,0 +1,77 @@
+Config { 
+font = "Terminus (TTF) 9" 
+, additionalFonts = ["FontAwesome 8"]
+, alpha = 229
+, borderColor = "#1B1B1B"
+, border = NoBorder
+, bgColor = "#1B1B1B"
+, fgColor = "#F9F9F9"
+, position = Static {xpos = 176 , ypos = 14 , width = 1012 , height = 22}
+, textOffset = -1
+, iconOffset = -1
+, lowerOnStart = True
+, pickBroadest = False
+, persistent = True 
+, hideOnStart = False
+, iconRoot = "."
+, allDesktops = True
+, overrideRedirect = True
+, textOutputFormat = Ansi
+, commands = 
+        [
+	      Run DynNetwork	 [ "--template" , "   <tx>kB/s|<rx>kB/s"
+			                   , "--Low"      , "1000"       -- units: B/s
+		                  	 , "--High"     , "5000"       -- units: B/s
+		                  	 , "--low"      , "#F9F9F9"
+		                  	 , "--normal"   , "darkorange"
+	                  		 , "--high"     , "#BF616A"
+		                  	 ] 10
+
+      	, Run CoreTemp   [ "--template" , "  <core0>°C <core1>°C"
+			                   , "--Low"      , "70"        -- units: °C
+		                  	 , "--High"     , "80"        -- units: °C
+		                  	 , "--low"      , "#F9F9F9"
+		                  	 , "--normal"   , "darkorange"
+		                  	 , "--high"     , "#BF616A"
+		                  	 ] 50
+
+      	, Run Battery    [ "--template" , "  <acstatus>"
+		                  	 , "--Low"      , "20"        -- units: %
+		                  	 , "--High"     , "80"        -- units: %
+		                  	 , "--low"      , "#BF616A"
+		                  	 , "--normal"   , "#F9F9F9"
+		                  	 , "--high"     , "#F9F9F9"
+
+		                  	 , "--" -- battery specific options
+			                        	-- discharging status
+			                         	, "-o"	, "<left>%"
+			                         	-- AC "on" status
+			                         	, "-O"	, "<fc=#F9F9F9><left>%</fc>"
+			                         	-- charged status
+			                         	, "-i"	, "<fc=#F9F9F9><left>%</fc>"
+	                  		 ] 50
+
+	      , Run Cpu 	 ["--template", "  <total>%"
+	              		 , "-L","3","-H","50"
+                     , "--normal","darkorange"
+		              	 , "--high","#BF616A"] 10
+
+      	, Run Memory ["-t"," <usedratio>%"] 10
+      	, Run Swap [] 10
+
+      	, Run Com "uname" ["-s","-r"] "" 36000
+	
+      	, Run Com "volume.sh" [] "vol" 10
+
+      	, Run Com "brightness.sh" [] "bright" 10
+
+      	, Run Com "mpd.sh" [] "mpd" 10
+
+      	, Run Date "%a %b %d %R" "date" 10
+        ]
+
+, sepChar = "%"
+, alignSep = "}{"
+, template = " <fc=#F9F9F9>  </fc><fc=#F9F9F9>diws </fc>  %memory%  %cpu%  %dynnetwork%  %mpd% }\
+      	     \{ %coretemp%  %bright%  %vol%  %battery%  <fc=#F9F9F9> %date%</fc> "
+}
