@@ -9,6 +9,7 @@
 ![My Image](https://github.com/diws1/dotfiles/blob/main/screenshots/twm%20retro.png)
 
 <b>BSPWM Preview</b>
+![My Image](https://github.com/diws1/dotfiles/blob/main/screenshots/bspwm%20preview%20idle.png)
 ![My Image](https://github.com/diws1/dotfiles/blob/main/screenshots/bspwm%20preview.png)
 
 <b>Xfce Preview</b> \
